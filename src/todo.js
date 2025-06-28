@@ -37,12 +37,13 @@ export class ProjectManager {
         this.projects = [];
         this.currentProject = null;
     }
-
+    
     createProject(name) {
         if (!this.getProject(name)) {
             this.projects.push(new Project(name));
+            return true;
         }
-
+        return false;
     }
 
     getProject(name) {
@@ -50,7 +51,7 @@ export class ProjectManager {
     }
 
     setCurrentProject(name) {
-        let project = this.projects.find(project => project.name === name);
+        const project = this.getProject(name);
         if (project) {
             this.currentProject = project;
         }
@@ -59,6 +60,8 @@ export class ProjectManager {
     addTodoToCurrentProject(todo) {
         if (this.currentProject) {
             this.currentProject.addTodo(todo);
+            return true;
         }
+        return false;
     }
 }

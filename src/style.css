@@ -1,53 +1,157 @@
 body {
     font-family: Arial, sans-serif;
     display: flex;
+    flex-direction: column;
     gap: 2rem;
     padding: 1rem;
-}
-
-#projects {
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.todo-item {
-    border: 1px solid #ccc;
-    padding: 0.75rem;
-    margin-bottom: 1rem;
-    border-radius: 6px;
-    background-color: #f9f9f9;
-}
-
-.todo-item button {
-    margin-right: 0.5rem;
-}
-
-form {
-    margin-bottom: 2rem;
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .project-controls {
     margin-bottom: 1rem;
+    padding: 1rem;
+    background: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#project-form {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#project-name {
+    flex-grow: 1;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 #projects button {
-    display: block;
-    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+    cursor: pointer;
     text-align: left;
-    margin-bottom: 0.5rem;
+    transition: all 0.2s;
+}
+
+#projects button:hover {
+    background-color: #f0f0f0;
 }
 
 #projects button.active {
     font-weight: bold;
     background-color: #e0e0ff;
+    border-color: #a0a0ff;
+}
+
+form#todo-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+form#todo-form input, 
+form#todo-form select {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+form#todo-form button {
+    padding: 0.75rem;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    grid-column: 1 / -1;
+}
+
+#todo-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
 }
 
 .todo-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     position: relative;
-    padding-left: 10px;
+    padding-left: 14px;
+}
+
+.todo-item p {
+    margin: 0 0 1rem 0;
+}
+
+.todo-item button {
+    margin-right: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.todo-item button:hover {
+    background: #e0e0e0;
+}
+
+.todo-item div[style*="display: block"] {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.todo-item input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.storage-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+#clear-storage {
+    padding: 0.75rem 1.5rem;
+    background: #ff5252;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+#clear-storage:hover {
+    background: #ff0000;
 }
