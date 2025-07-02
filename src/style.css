@@ -1,19 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Cuprum:ital,wght@0,400..700;1,400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lobster&family=Permanent+Marker&family=Playpen+Sans:wght@100..800&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
+    font-family: "Sofia Sans", sans-serif;
     gap: 2rem;
-    padding: 1rem;
-    max-width: 1200px;
+    padding: 0;
     margin: 0 auto;
+    font-optical-sizing: auto;
+    font-weight: 25px;
+    font-style: normal;
+    color: white;
+    background-image: url(../jonatan-pie-3l3RwQdHRHg-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.setup {
+    display:  flex;
+    height: 100dvh;
+    gap: 50px;
+    padding: 20px;
 }
 
 .project-controls {
-    margin-bottom: 1rem;
-    padding: 1rem;
-    background: #f5f5f5;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px white;
+    width: 30%;
+    padding: 20px;
 }
 
 #project-form {
@@ -26,7 +38,9 @@ body {
 #project-name {
     flex-grow: 1;
     padding: 0.75rem;
-    border: 1px solid #ddd;
+    box-shadow: 0 0 10px white;
+    color: white;
+    background-color: black;
     border-radius: 4px;
     font-size: 1rem;
 }
@@ -36,26 +50,25 @@ body {
     flex-direction: column;
     gap: 0.5rem;
     margin-bottom: 1rem;
+    font-size: 25px;
 }
 
 #projects button {
     padding: 0.75rem;
-    border: 1px solid #ddd;
     border-radius: 4px;
-    background: white;
+    color: white;
+    background-color: black;
     cursor: pointer;
     text-align: left;
     transition: all 0.2s;
 }
 
 #projects button:hover {
-    background-color: #f0f0f0;
+    box-shadow: 0 0 10px white;
 }
 
 #projects button.active {
     font-weight: bold;
-    background-color: #e0e0ff;
-    border-color: #a0a0ff;
 }
 
 form#todo-form {
@@ -63,12 +76,11 @@ form#todo-form {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
     padding: 1rem;
-    background: #f9f9f9;
     border-radius: 8px;
     margin-bottom: 2rem;
 }
 
-form#todo-form input, 
+form#todo-form input,
 form#todo-form select {
     padding: 0.75rem;
     border: 1px solid #ddd;
@@ -88,23 +100,22 @@ form#todo-form button {
 }
 
 #todo-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1rem;
+    display: flex;
+    flex-direction: row;
 }
 
 .todo-item {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1.5rem;
-    background: white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    position: relative;
-    padding-left: 14px;
+    max-width: 350px;
+    max-height: fit-content;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
 }
 
 .todo-item p {
-    margin: 0 0 1rem 0;
+    color: black;
+    display: flex;
+    flex-direction: column;
 }
 
 .todo-item button {
@@ -149,7 +160,7 @@ form#todo-form button {
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 #clear-storage:hover {
